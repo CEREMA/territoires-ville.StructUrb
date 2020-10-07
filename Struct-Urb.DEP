@@ -1,0 +1,32 @@
+[Version]
+Version=2.0.0.0
+
+[Struct-Urb.exe <000C>]
+Dest=$(AppPath)
+Date=20/01/2005
+Time=11:13
+Version=2.0.0.0
+CABFilename=Struct-Urb.CAB
+CABINFFile=Struct-Urb.INF
+Uses1=msvbvm60.dll
+Uses2=oleaut32.dll
+Uses3=olepro32.dll
+Uses4=asycfilt.dll
+Uses5=stdole2.tlb
+Uses6=COMCAT.DLL
+Uses7=vb6fr.dll
+Uses8=Struct.dll
+Uses9=hhctrl.ocx
+Uses10=COMDLG32.OCX
+Uses11=comctl32.ocx
+Uses12=tabctl32.ocx
+Uses13=ss32x25.ocx
+Uses14=Msmask32.ocx
+Uses15=RICHTX32.OCX
+Uses16=COMCT232.OCX
+
+[ss32x25.ocx <000C>]
+Dest=$(WinSysPath)
+Date=10/12/1998
+Time=19:00
+Version=2.5.0.55

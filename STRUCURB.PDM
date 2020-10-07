@@ -1,0 +1,248 @@
+[Root]
+Most Recent Package=Logiciel d'installation standard 1
+
+
+[Package|Fichier  1.dep|Root]
+SubWizProgID=PDWizard.DepPkgSubWiz
+BuildFolder=D:\LOG_StructUrb\Sources
+
+[Package|Fichier  1.dep|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Fichier  1.dep|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Fichier  1.dep|Files Found]
+
+[Package|Fichier  1.dep|Files Released]
+
+[Package|Fichier  1.dep|Missing Dependency Information]
+C:\WINDOWS\system32\ss32x25.ocx=
+
+[Package|Fichier  1.dep|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\RICHTX32.OCX=
+C:\WINDOWS\system32\Msmask32.ocx=
+C:\WINDOWS\system32\tabctl32.ocx=
+C:\WINDOWS\system32\comctl32.ocx=
+C:\WINDOWS\system32\COMDLG32.OCX=
+
+[Package|Fichier  1.dep|Files Added]
+
+[Package|Fichier  1.dep|Files Removed]
+
+[Package|Fichier  1.dep|Files In Project]
+D:\LOG_StructUrb\Sources\Struct-Urb.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\vb6fr.dll=Yes
+D:\LOG_StructUrb\Sources\Struct.dll=Yes
+C:\WINDOWS\system32\hhctrl.ocx=Yes
+C:\WINDOWS\system32\itss.dll=Yes
+C:\WINDOWS\system32\itircl.dll=Yes
+C:\WINDOWS\hh.exe=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\CMDLGFR.DLL=Yes
+C:\WINDOWS\system32\comctl32.ocx=Yes
+C:\WINDOWS\system32\CMCTLFR.DLL=Yes
+C:\WINDOWS\system32\tabctl32.ocx=Yes
+C:\WINDOWS\system32\TABCTFR.DLL=Yes
+C:\WINDOWS\system32\ss32x25.ocx=Yes
+C:\WINDOWS\system32\Msmask32.ocx=Yes
+C:\WINDOWS\system32\MSMSKFR.DLL=Yes
+C:\WINDOWS\system32\RICHTX32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\system32\RCHTXFR.DLL=Yes
+C:\WINDOWS\system32\COMCT232.OCX=Yes
+C:\WINDOWS\system32\CMCT2FR.DLL=Yes
+
+[Package|Fichier  1.dep|Configure Registry Files]
+Applicable=
+
+[Package|Fichier  1.dep|Configure Remote Servers]
+Applicable=
+
+[Package|Fichier  1.dep|Install Locations]
+D:\LOG_StructUrb\Sources\Struct-Urb.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vb6fr.dll=$(WinSysPath)
+D:\LOG_StructUrb\Sources\Struct.dll=$(AppPath)
+C:\WINDOWS\system32\hhctrl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\itss.dll=$(WinSysPath)
+C:\WINDOWS\system32\itircl.dll=$(WinSysPath)
+C:\WINDOWS\hh.exe=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\CMCTLFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\tabctl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\TABCTFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ss32x25.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Msmask32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\RCHTXFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\COMCT232.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMCT2FR.DLL=$(WinSysPath)
+
+[Package|Fichier  1.dep|Configure Shared Files]
+Applicable=
+
+[Package|Fichier  1.dep|DepFile]
+DepCabFile=Struct-Urb.CAB
+DepCabRun=Struct-Urb.INF
+
+[Package|Fichier  1.dep|Package]
+PackageFolder=D:\LOG_StructUrb\Sources
+ProjectFolder=D:\LOG_StructUrb\Sources
+ServerSideCab=
+File1=D:\LOG_StructUrb\Sources\Struct-Urb.DEP
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Logiciel d'installation standard 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\LOG_StructUrb
+
+[Package|Logiciel d'installation standard 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Logiciel d'installation standard 1|Files Found]
+
+[Package|Logiciel d'installation standard 1|Files Released]
+
+[Package|Logiciel d'installation standard 1|Missing Dependency Information]
+C:\WINDOWS\system32\ss32x25.ocx=
+
+[Package|Logiciel d'installation standard 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\RICHTX32.OCX=
+C:\WINDOWS\system32\Msmask32.ocx=
+C:\WINDOWS\system32\tabctl32.ocx=
+C:\WINDOWS\system32\comctl32.ocx=
+C:\WINDOWS\system32\COMDLG32.OCX=
+
+[Package|Logiciel d'installation standard 1|Files Added]
+
+[Package|Logiciel d'installation standard 1|Files Removed]
+
+[Package|Logiciel d'installation standard 1|Files In Project]
+D:\LOG_StructUrb\Sources\Struct-Urb.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\vb6fr.dll=Yes
+D:\LOG_StructUrb\Sources\Struct.dll=Yes
+C:\WINDOWS\system32\hhctrl.ocx=Yes
+C:\WINDOWS\system32\itss.dll=Yes
+C:\WINDOWS\system32\itircl.dll=Yes
+C:\WINDOWS\hh.exe=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\CMDLGFR.DLL=Yes
+C:\WINDOWS\system32\comctl32.ocx=Yes
+C:\WINDOWS\system32\CMCTLFR.DLL=Yes
+C:\WINDOWS\system32\tabctl32.ocx=Yes
+C:\WINDOWS\system32\TABCTFR.DLL=Yes
+C:\WINDOWS\system32\ss32x25.ocx=Yes
+C:\WINDOWS\system32\Msmask32.ocx=Yes
+C:\WINDOWS\system32\MSMSKFR.DLL=Yes
+C:\WINDOWS\system32\RICHTX32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\system32\RCHTXFR.DLL=Yes
+C:\WINDOWS\system32\COMCT232.OCX=Yes
+C:\WINDOWS\system32\CMCT2FR.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Logiciel d'installation standard 1|Configure Registry Files]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Install Locations]
+D:\LOG_StructUrb\Sources\Struct-Urb.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vb6fr.dll=$(WinSysPath)
+D:\LOG_StructUrb\Sources\Struct.dll=$(AppPath)
+C:\WINDOWS\system32\hhctrl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\itss.dll=$(WinSysPath)
+C:\WINDOWS\system32\itircl.dll=$(WinSysPath)
+C:\WINDOWS\hh.exe=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\CMCTLFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\tabctl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\TABCTFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\ss32x25.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Msmask32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\RCHTXFR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\COMCT232.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMCT2FR.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Logiciel d'installation standard 1|Configure Shared Files]
+Applicable=Yes
+D:\LOG_StructUrb\Sources\Struct-Urb.exe=No
+D:\LOG_StructUrb\Sources\Struct.dll=No
+
+[Package|Logiciel d'installation standard 1|DepFile]
+DepCabFile=Struct-Urb.CAB
+DepCabRun=Struct-Urb.INF
+
+[Package|Logiciel d'installation standard 1|Distribution]
+Type=single
+Size=
+Title=Struct-Urb
+
+[Package|Logiciel d'installation standard 1|IconGroups]
+Group0=Struct-Urb
+PrivateGroup0=Vrai
+Parent0=$(Programs)
+
+[Package|Logiciel d'installation standard 1|Struct-Urb]
+Icon1=Struct-Urb.exe
+Title1=Struct-Urb
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Logiciel d'installation standard 1|Package]
+PackageFolder=D:\LOG_StructUrb
+ProjectFolder=D:\LOG_StructUrb\Sources
+ServerSideCab=
+File1=D:\LOG_StructUrb\setup.exe
+File2=D:\LOG_StructUrb\Setup.Lst
+File3=D:\LOG_StructUrb\Struct-Urb.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

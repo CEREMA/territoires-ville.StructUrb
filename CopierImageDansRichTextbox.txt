@@ -1,0 +1,168 @@
+''''''''''''''''''''''''''''''' DANS UNE FORM ''''''''''''''''''''''''''''''''''''''
+
+Option Explicit
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'      APP REALISEE PAR FERREIROS SEBASTIEN ALIAS GREENGOLD
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+
+Const PtIns As String = "{\pict\"    'Point d'insertion pour récupérer le contenu de l'image
+Dim FSO As New FileSystemObject  'sert à manipuler les dossiers et fichiers, Projet > Références > Microsoft Scripting Runtime
+Dim NomImg As String    'Nom du fichier image sélectionné par l'utilisateur
+Dim ContenuImg As String    'Contenu des octets de l'image (Format RichTextFile)
+
+
+Private Sub BtParcours_Click()
+    Dim ch As String
+     
+    On Error GoTo GestionErreurs
+    
+    'Initialisation du CommonDialog
+    CD.CancelError = True    'une erreur sera déclenchée si l'utilisateur clique sur le bouton annuler
+    CD.DialogTitle = "Choisissez une image"
+    CD.Flags = cdlOFNPathMustExist And cdlOFNFileMustExist
+    CD.InitDir = App.Path & "\Smiles"
+    CD.Filter = "Images (jpg ou gif)|*.jpg; *.jpeg ; *.gif"
+    CD.ShowOpen
+    If FSO.FileExists(CD.FileName) = True Then  'On vérifie l'existence du fichier
+            
+        'S'il y a du texte dans le presse papier, on l'affecte à ch
+        If Clipboard.GetFormat(vbCFText) Then
+            ch = Clipboard.GetText
+        End If
+        'Initialisation de la form
+        PicSmile.Cls
+        RtbSmile.Text = ""
+        PicSmile.Picture = LoadPicture(CD.FileName) 'On copie l'image dans une PictureBox invisible
+        'Copie de l'image dans la RichTextBox pas API
+        Clipboard.Clear
+        Clipboard.SetData PicSmile.Picture
+        SendMessage RtbSmile.hwnd, WM_PASTE, 0, 0   'Insertion de l'image dans la RichTextBox
+        Clipboard.Clear
+        If Not ch = "" Then 'S'il y avait du texte dans le presse papier, on le recolle
+            Clipboard.SetText ch
+        End If
+        RtbRtf.Text = RtbSmile.TextRTF
+        NomImg = Left(CD.FileTitle, Len(CD.FileTitle) - 4)
+        Frame2.Enabled = True
+    Else
+        Err.Raise vbObjectError + 513    'On déclenche une erreur
+    End If
+    Exit Sub
+
+GestionErreurs:
+    
+    Select Case Err.number
+        Case vbObjectError + 513            'Le fichier voulu n'existe pas
+            MsgBox "Ce fichier n'existe pas, veuillez en choisir un autre.", vbExclamation, "Fichier introuvable !"
+        Case cdlCancel                  'Clic sur le bouton annuler de la CommonDialog
+            'MsgBox "Clic sur Annuler !"
+    End Select
+End Sub
+
+
+'Je sais que la déclaration de l'image commence par "{\pict\" et finit par "}"
+'On va faire une recherche de sous-chaine
+Private Sub BtRecup_Click()
+    Dim PosDeb As Integer
+    Dim PosFin As Long
+    
+    'Recherche de la position de la sous-chaine
+    PosDeb = InStr(1, RtbRtf.Text, PtIns, vbTextCompare)
+    PosFin = Len(RtbRtf.Text) - 10  'InStr(PosDeb, RtbRtf.Text, "}", vbTextCompare)
+    'Extraction de la sous-chaine
+    ContenuImg = Mid(RtbRtf.Text, PosDeb, PosFin - PosDeb + 1)
+    RtbPicRtf.Text = ContenuImg
+End Sub
+
+
+Private Sub BtConst_Click()
+    Dim Chemin As String
+    Dim Msg As VbMsgBoxResult
+    
+    Chemin = App.Path & "\Fichiers .picrtf\" & NomImg & ".picrtf"
+    While FSO.FileExists(Chemin) = True
+        Msg = MsgBox("Attention le fichier " & NomImg & ".picrtf" & " existe déjà, il va être écrasé, voulez-vous le renomer ?", vbExclamation + vbYesNo)
+        If Msg = vbYes Then
+            NomImg = InputBox("Donnez un nom au nouveau fichier", , NomImg)
+            Chemin = App.Path & "\Fichiers .picrtf\" & NomImg & ".picrtf"
+        Else
+            Chemin = ""
+        End If
+    Wend
+    
+    If Chemin = "" Then Chemin = App.Path & "\Fichiers .picrtf\" & Left(NomImg, Len(NomImg) - 4) & ".picrtf"
+
+    Open Chemin For Output As #1    'Accès et création du fichier (type = séquentiel, mode = écriture)
+        Print #1, ContenuImg        'écriture dans le fichier
+    Close #1
+    Frame2.Enabled = False
+        
+End Sub
+
+
+
+Private Sub BtConv_Click()
+    'Initialisation du CommonDialog
+    'CD2.CancelError = True   'une erreur sera déclenchée si l'utilisateur clique sur le bouton annuler
+    CD2.DialogTitle = "Choisissez le fichier.picrtf"
+    CD2.Flags = cdlOFNPathMustExist And cdlOFNFileMustExist
+    CD2.InitDir = App.Path & "\Fichiers .picrtf"
+    CD2.Filter = "Fichiers .picrtf|*.picrtf"
+    CD2.ShowOpen
+    If FSO.FileExists(CD2.FileName) = True Then 'On vérifie l'existence du fichier
+        Call Convertir(ZsSmile.Text, CD2.FileName, RtbMess, RtbDest)
+    Else
+        MsgBox "Erreur...", vbCritical
+    End If
+End Sub
+
+
+Private Sub Convertir(ByVal Smile As String, ByVal PathFicPicRtf As String, _
+                        ByVal RichTextBoxOrigine As RichTextBox, _
+                        ByVal RichTextBoxDestination As RichTextBox)
+'Smile = ":)" ou ";+}" ...... Attention de ne pas prendre une chaine présente dans l'en-tête du format RichTextFile
+'PathFicPicRtf = Chemin complet du fichier.picrtf
+'RichTextBoxOrigine = La RichTextBox qui contient le message à convertir
+'RichTextBoxDestination = La RichTextBox qui contiendra les images
+    
+    Dim Interm As String
+    Dim ChSmile As String    'chaine du .picrtf
+    
+    Open PathFicPicRtf For Input As #1
+        While Not EOF(1)            'tant que non fin
+            Line Input #1, Interm        'lecture
+            ChSmile = ChSmile & Interm
+        Wend
+    Close #1
+
+    RichTextBoxDestination.TextRTF = Replace(RichTextBoxOrigine.TextRTF, Smile, ChSmile, , , vbTextCompare)
+End Sub
+
+
+'''''''''''''''''''''''''''''''' DANS UN MODULE ''''''''''''''''''''''''''''''''
+
+Option Explicit
+
+'Sert à copier une image dans une RichTextBox (vide le presse papier !!)
+Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+Public Const WM_PASTE = &H302
+
+
+
+
+
+
+
+
+ Explication finale : 
+--------------------------------------------------------------------------------
+
+Le principe de fonctionnement est simple, on colle une image dans une RichTextBox, on extrait le codage de l'image du code RTF de la RichTextBox. Ensuite, on met le contenu de l'image extrait dans un fichier.picrtf (on aurait aussi pu le mettre dans une variable... ça reste à tester, surtout si on manipule des images volumineuses, peut-être que c plus performent... ?). Enfin, on utilise ce fichier, en écrivant son contenu directement dans le code RTF d'une RichTextBox.
+
+
+Bon coding à tous ;) 
+

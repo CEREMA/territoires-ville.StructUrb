@@ -1,0 +1,4 @@
+Ligne 15: La classe ComctlLib.Toolbar du contrôle tbToolBar n'est pas une classe de contrôle chargée.
+Ligne 69: La classe ComctlLib.StatusBar du contrôle sbStatusBar n'est pas une classe de contrôle chargée.
+Ligne 106: La classe MSComDlg.CommonDialog du contrôle dlgCommonDialog n'est pas une classe de contrôle chargée.
+Ligne 113: La classe ComctlLib.ImageList du contrôle imlIcons n'est pas une classe de contrôle chargée.
